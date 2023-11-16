@@ -1,1 +1,1 @@
-# GymGenius
+# Gym Genius APP
