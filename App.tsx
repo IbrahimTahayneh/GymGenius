@@ -1,18 +1,22 @@
-import { StatusBar } from "expo-status-bar";
+import { useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { StyleSheet, Text, View } from "react-native";
-import { useCallback } from "react";
-import { FONT_FAMILIES } from "./src/theme";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
+import { AppContainer } from "./src";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const queryClient = new QueryClient();
+
   const [fontsLoaded] = useFonts({
     "Poppins-Medium": require("./assets/fonts/Poppins-Medium.ttf"),
     "Poppins-Light": require("./assets/fonts/Poppins-Light.ttf"),
     "Poppins-SemiBold": require("./assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Regular": require("./assets/fonts/Poppins-Regular.ttf"),
+    "Rufina-Bold": require("./assets/fonts/Rufina-Bold.ttf"),
   });
 
   const handleOnLayout = useCallback(async () => {
@@ -26,23 +30,10 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container} onLayout={handleOnLayout}>
-      <Text style={styles.titl}>
-        Open up App.tsx to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaProvider onLayout={handleOnLayout}>
+        <AppContainer />
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  titl: {
-    fontFamily: FONT_FAMILIES.POPPINS_REGULAR,
-  },
-});
