@@ -13,11 +13,14 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { useNavigation } from "@react-navigation/native";
 import { FONT_FAMILIES } from "../theme";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 export default function Welcome() {
+  const navigation: any = useNavigation();
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
@@ -28,7 +31,7 @@ export default function Welcome() {
         end={{ x: 0.5, y: 0.8 }}
       >
         <Image
-          source={require("../../assets/welcome.png")}
+          source={require("../../assets/images/welcome.png")}
           style={styles.backgroundImage}
         />
         <Animated.View
@@ -40,7 +43,10 @@ export default function Welcome() {
         </Animated.View>
 
         <Animated.View entering={FadeInDown.delay(200).springify()}>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => navigation.navigate("Home")}
+          >
             <Text style={styles.titleBtn}>Get Started</Text>
           </TouchableOpacity>
         </Animated.View>

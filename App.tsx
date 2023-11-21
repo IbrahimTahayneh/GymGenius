@@ -31,7 +31,10 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SafeAreaProvider onLayout={handleOnLayout}>
+      <SafeAreaProvider
+        onLayout={handleOnLayout}
+        style={{ backgroundColor: "#FFFFFF" }}
+      >
         <AppContainer />
       </SafeAreaProvider>
     </QueryClientProvider>
