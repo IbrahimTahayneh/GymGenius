@@ -1,43 +1,43 @@
 export const bodyParts = [
   {
-    name: "back",
+    name: "Back",
     image: require("../../assets/images/back.png"),
   },
   {
-    name: "cardio",
+    name: "Cardio",
     image: require("../../assets/images/cardio.png"),
   },
 
   {
-    name: "lower arms",
+    name: "Lower arms",
     image: require("../../assets/images/lowerArms.png"),
   },
   {
-    name: "lower legs",
+    name: "Lower Legs",
     image: require("../../assets/images/lowerLegs.png"),
   },
   {
-    name: "chest",
+    name: "Chest",
     image: require("../../assets/images/chest.png"),
   },
   {
-    name: "neck",
+    name: "Neck",
     image: require("../../assets/images/neck.png"),
   },
   {
-    name: "shoulders",
+    name: "Shoulders",
     image: require("../../assets/images/shoulders.png"),
   },
   {
-    name: "upper arms",
+    name: "Upper Arms",
     image: require("../../assets/images/upperArms.png"),
   },
   {
-    name: "upper legs",
+    name: "Upper Legs",
     image: require("../../assets/images/upperLegs.png"),
   },
   {
-    name: "waist",
+    name: "Waist",
     image: require("../../assets/images/waist.png"),
   },
 ];

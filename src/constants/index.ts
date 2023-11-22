@@ -1,4 +1,4 @@
 import { sliderImages } from "./sliderImage";
 import { bodyParts } from "./bodyParts";
-
-export { sliderImages, bodyParts };
+import { demoExercises as demoData } from "./demoExercises";
+export { sliderImages, bodyParts, demoData };

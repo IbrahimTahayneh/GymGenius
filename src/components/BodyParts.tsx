@@ -34,7 +34,9 @@ const BodyPartCard = ({ index, item }: CardProps) => {
         .springify()}
     >
       <TouchableOpacity
-        onPress={() => navigation.navigate("Welcome")}
+        onPress={() =>
+          navigation.navigate("Exercies", { name: item.name, image: item.image })
+        }
         style={styles.btn}
       >
         <Image source={item.image} resizeMode="cover" style={styles.imageBG} />

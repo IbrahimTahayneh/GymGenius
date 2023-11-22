@@ -2,6 +2,7 @@ import { NavigationContainer as RNNavigationContainer } from "@react-navigation/
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Welcome from "./Welcome";
 import Home from "./Home";
+import Exercies from "./Exercies";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,11 @@ export default function NavigationContainer() {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Exercies"
+          component={Exercies}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
