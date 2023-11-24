@@ -8,8 +8,11 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { FONT_FAMILIES } from "../theme";
 import { BodyParts, ImageSlider } from "../components";
+import { useExercies, useExerciesByBodyPart } from "../queries";
 
 export default function Home() {
+
+
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
       <StatusBar style="dark" />

@@ -11,13 +11,15 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { FONT_FAMILIES } from "../theme";
 import ExerciseList from "../components/ExerciseList";
-import { demoData } from "../constants";
+import { useExerciesByBodyPart } from "../queries";
 
 export default function Exercies() {
   const navigation = useNavigation();
 
   const { params } = useRoute();
   const { image, name }: any = params;
+
+  const { data } = useExerciesByBodyPart({ bodyPart: name.toLowerCase() });
 
   return (
     <ScrollView>
@@ -60,7 +62,7 @@ export default function Exercies() {
           {name} Exercises
         </Text>
         <View style={{ marginBottom: 40 }}>
-          <ExerciseList data={demoData} />
+          <ExerciseList data={data} />
         </View>
       </View>
     </ScrollView>

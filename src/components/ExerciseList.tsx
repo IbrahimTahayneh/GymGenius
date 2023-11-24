@@ -22,21 +22,33 @@ const ExerciseCard = ({ item, index, router }: ExerciseCardProps) => {
     >
       <TouchableOpacity
         onPress={() => router.navigate("ExerciseDetails", { item })}
-        style={{ display: "flex", paddingVertical: 12, marginTop: 12 }}
+        style={{
+          display: "flex",
+          paddingVertical: 12,
+          marginTop: 12,
+        }}
       >
         <View
           style={{
             backgroundColor: "#FFFFFF",
             shadowColor: "rgb(0 0 0)",
-            shadowOffset: { width: 1, height: 3 },
-            shadowOpacity: 0.1,
+            shadowOffset: { width: 1, height: -1 },
+            shadowOpacity: 0.4,
             borderRadius: 25,
+            width: wp(44),
+            height: wp(52),
+            marginRight: 12,
+            marginLeft: 2,
           }}
         >
           <Image
-            contentFit="cover"
+            contentFit="contain"
             source={{ uri: item.gifUrl }}
-            style={{ width: wp(44), height: wp(52), borderRadius: 25 }}
+            style={{
+              width: wp(44),
+              height: wp(52),
+              borderRadius: 25,
+            }}
           />
         </View>
         <Text
@@ -45,10 +57,9 @@ const ExerciseCard = ({ item, index, router }: ExerciseCardProps) => {
             color: "#404040",
             letterSpacing: 2,
             fontFamily: FONT_FAMILIES.POPPINS_SEMI_BOLD,
-            marginLeft: 4,
           }}
         >
-          {item?.name?.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
+          {item?.name?.length > 15 ? item.name.slice(0, 15) + "..." : item.name}
         </Text>
       </TouchableOpacity>
     </Animated.View>
