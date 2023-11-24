@@ -7,9 +7,10 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { FONT_FAMILIES } from "../theme";
+import { Exercise } from "../type";
 
 interface ExerciseCardProps {
-  item: any;
+  item: Exercise;
   index: number;
   router: NavigationProp<any, any>;
 }
@@ -21,7 +22,7 @@ const ExerciseCard = ({ item, index, router }: ExerciseCardProps) => {
         .springify()}
     >
       <TouchableOpacity
-        onPress={() => router.navigate("ExerciseDetails", { item })}
+        onPress={() => router.navigate("ExericeDetails", { data: item })}
         style={{
           display: "flex",
           paddingVertical: 12,

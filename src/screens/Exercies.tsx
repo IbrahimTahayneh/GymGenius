@@ -61,7 +61,7 @@ export default function Exercies() {
         >
           {name} Exercises
         </Text>
-        <View style={{ marginBottom: 40 }}>
+        <View style={{ marginBottom: 50 }}>
           <ExerciseList data={data} />
         </View>
       </View>
